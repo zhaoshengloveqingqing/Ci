@@ -1,0 +1,32 @@
+@mixin responsive_pinet_responsive($args...) {
+  	$grid-col-rs: $screen_width;
+	@if type-of($alias_width) == number {
+		$grid_sel: $grid-col-rs;
+	}
+	@else {
+		$grid_sel: $grid-col-rs, $alias_width;
+	}
+
+	@each $sel in $grid_sel {
+		.hidden-#{$grid-col-rs} {
+			display: block;
+		}
+		.visible-#{$sel}-block {
+		    display: block !important;
+		}
+		.hidden-#{$grid-col-rs}  {
+			display: none;
+		}
+	}
+}
+
+@include pinet_resolutions_visible();
+
+.embed-responsive {
+
+  // Modifier class for 16:10 aspect ratio
+  &.embed-responsive-16by10 {
+    padding-bottom: 62.5%;
+  }
+
+}

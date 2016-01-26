@@ -1,0 +1,66 @@
+@mixin responsive_pinet_dialog($args...) {
+	.showbox {
+		overflow: hidden;
+		picture {
+			display: inline-block;
+			img {
+				width: 100%;
+			}
+		}
+		.dialog-body {
+			.ibox-logo {
+				width: res(165px);
+				float: left;
+				picture {
+					width: res(165px);
+				}
+			}
+			.ibox-info {
+				padding-left: 40%;
+			}
+		}
+		.dialog-footer {
+			.btn {
+				&.ibox-upload-btn {
+					// width: res(254px);
+				}
+			}
+		}
+	}
+	.pinet-dialog {
+		overflow: hidden;
+		.dialog-body {
+			height: res(204px);
+			padding-top: res(24px);
+			padding-left: res(24px);
+			padding-right: res(24px);
+		}
+		.dialog-footer {
+			padding-left: res(24px);
+			padding-top: res(24px);
+			padding-right: res(24px);
+			padding-bottom: res(24px);
+			height: res(119px);
+			background-color: #fafafa;
+			.btn {
+				@include pinet-btn-variant(none);
+				@include pinet-btn-size(res(125px), res(70px));
+				border-radius: res(7px);
+				box-shadow: none;
+				> i.glyphicon {
+					font-size: res(30px);
+					line-height: res(37px);
+				}
+			}
+			.btn.dialog-cancel {
+				float: right;
+				width: res(140px);
+				border: 0;
+				background-color: #f2f3f5;
+			}
+			.btn.dialog-cancel.pull-left {
+				float: left;
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"author": "Jack <jack.fu@pinet.co>",
+	"date": "Wed Nov 26 14:56:18 2014",
+	"version": "1.0",
+	"name": "pinet.bootstrap",
+	"js": {
+		"depends": [
+		{
+			"module": "bootstrap",
+			"file": "bootstrap",
+			"version": "3.2.0"
+		}],
+		"files" : [
+		]
+	},
+	"depends": ["jquery"],
+	"scss": {
+		"depends": [{
+			"module": "bootstrap",
+			"file": "_bootstrap",
+			"version": "3.3.1"
+		}],
+		"files": []
+	}
+}

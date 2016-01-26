@@ -1,0 +1,91 @@
+@mixin button_variant($variants...) {
+	$mixin_text_color: #ffffff;
+	$mixin_text_shadow: 0 2px rgba(0,0,0,.25);
+	@if $variants {
+		@if type-of($variants) == list {
+			@if length($variants) == 1 {
+				$mixin_text_color: nth($variants, 1);
+			}
+			@if length($variants) == 2 {
+				$mixin_text_color: nth($variants, 1);
+				$mixin_text_shadow: nth($variants, 2);
+			}
+		}
+	}
+	color: $mixin_text_color;
+	text-shadow: $mixin_text_shadow;
+	font-size: res($btn_font_size);
+	width: res($btn_width);
+	height: res($btn_height);
+	line-height: res($btn_line_height);
+	border-radius: $btn_border_radius;
+	Letter-spacing: $btn_letter_sapcing;
+	padding: 0;
+	& > picture {
+		height: 100%;
+	}
+	& > img, & > picture >img {
+		height: res($btn_img_height);
+		position: relative;
+		top: -3px;
+	}
+	&.btn-circle {
+		width: res($btn_circle_width);
+	}
+}
+
+@mixin button_size($width, $height, $line-height: $height) {
+	padding: 0;
+	width: res($width);
+	height: res($height);
+	line-height: res($line-height);
+}
+
+@mixin button_color($colors...) {
+	@if $colors {
+		@if type-of($colors) == list {
+			@if length($colors) < 3 {
+				@error "At least three arguments";
+			}
+			@if length($colors) >= 3 {
+				@include mixin-border-color(nth($colors, 1), nth($colors, 2), nth($colors, 3));
+				@include mixin-background-color(nth($colors, 1), nth($colors, 2), nth($colors, 3));
+				&:hover,
+				&:focus,
+				&:active,
+				&.active,
+				.open > .dropdown-toggle & {
+					color:#ffffff;
+					background-color: nth($colors, 2);
+					border-color: nth($colors, 2);
+				}
+				&:active,
+				&.active,
+				.open > .dropdown-toggle & {
+					background-image: none;
+					background-color: nth($colors, 3);
+					border-color: nth($colors, 3);
+				}
+				&.disabled,
+				&[disabled],
+				fieldset[disabled] & {
+					&,
+					&:hover,
+					&:focus,
+					&:active,
+					&.active {
+						background-color: $btn_disabled_bg;
+						border-color: $btn_disabled_bg;
+					}
+				}
+			}
+			@if length($colors) == 4 {
+				@include box-shadow(nth($colors, 4));
+				.open > .dropdown-toggle & {
+					@include box-shadow(nth($colors, 4));
+				}
+			}
+		}
+	}
+
+}

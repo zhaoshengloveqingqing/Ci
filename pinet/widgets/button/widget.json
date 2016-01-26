@@ -1,0 +1,68 @@
+{
+	"author": "Jack <jack.fu@pinet.co>",
+	"date": "Fri Nov 28 11:18:24 2014",
+	"version": "1.0",
+	"name": "pinet.button",
+	"doc":"The button widget",
+	"js": {
+		"depends": [],
+		"files" : [
+			"button", "dropdown"
+		]
+	},
+	"depends": ["jquery","image"],
+	"scss": {
+		"depends": [{
+			"module": "bootstrap",
+			"file": "bootstrap/mixins/_vendor-prefixes",
+			"version": "3.3.1"
+		},
+		{
+			"module": "bootstrap",
+			"file": "bootstrap/mixins/_tab-focus",
+			"version": "3.3.1"
+		},
+		{
+			"module": "bootstrap",
+			"file": "bootstrap/mixins/_opacity",
+			"version": "3.3.1"
+		},
+		{
+			"module": "bootstrap",
+			"file": "bootstrap/mixins/_nav-divider",
+			"version": "3.3.1"
+		},
+		{
+			"module": "bootstrap",
+			"file": "bootstrap/mixins/_reset-filter",
+			"version": "3.3.1"
+		},
+		{
+			"module": "bootstrap",
+			"file": "bootstrap/mixins/_border-radius",
+			"version": "3.3.1"
+		},
+		{
+			"module": "bootstrap",
+			"file": "bootstrap/mixins/_clearfix",
+			"version": "3.3.1"
+		},
+		{
+			"module": "bootstrap",
+			"file": "bootstrap/_dropdowns",
+			"version": "3.3.1"
+		},
+		{
+			"module": "bootstrap",
+			"file": "bootstrap/_close",
+			"version": "3.3.1"
+		},
+		{
+			"module": "bootstrap",
+			"file": "bootstrap/_button-groups",
+			"version": "3.3.1"
+		}
+		],
+		"files": ["bootstrap_button_mixin", "bootstrap_button", "pinet_button_mixin", "pinet_button","pinet_checkgroup","pinet_switchbox"]
+	}
+}

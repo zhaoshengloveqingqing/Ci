@@ -1,0 +1,56 @@
+{
+	"author": "Andy",
+	"date": "Mon Dec 01 13:27:56 2014",
+	"version": "1.0",
+	"name": "pinet.breadcrumb",
+	"doc":"[doc]",
+	"js": {
+		"depends": [],
+		"files" : []
+	},
+	"scss": {
+		"depends": [
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/_normalize",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_text-emphasis",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_background-variant",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_text-overflow",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_clearfix",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_image",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/_scaffolding",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/_type",
+				"version": "3.3.1"
+			}
+		],
+		"files": ["pinet_breadcrumb"]
+	}
+}

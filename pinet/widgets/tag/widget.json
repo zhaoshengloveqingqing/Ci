@@ -1,0 +1,21 @@
+{
+	"author": "Andy",
+	"date": "Mon Dec 01 11:31:39 2014",
+	"version": "1.0",
+	"name": "pinet.tag",
+	"doc":"[doc]",
+	"js": {
+		"depends": [],
+		"files" : []
+	},
+	"scss": {
+		"depends": [
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_labels.scss",
+				"version": "3.3.1"
+			}
+		],
+		"files": ["pinet_tag"]
+	}
+}

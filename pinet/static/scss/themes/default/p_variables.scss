@@ -1,0 +1,95 @@
+$p_panel_width: 1280px;
+$screen_max_width: 2880px;
+
+$pinet_blue: #1d99d2;
+$pinet_blue_hover: #0d8bc5;
+$pinet_blue_active: #087eb5;
+
+$pinet_cyan: #1dd2af;
+$pinet_cyan_hover: #0dc5a1;
+$pinet_cyan_active: #07ba97;
+
+$pinet_green: #55d684;
+$pinet_green_hover: #42cb74;
+$pinet_green_active: #33bc65;
+
+$pinet_grey: #c3c9cf;
+$pinet_grey_hover: #b9c0c7;
+$pinet_grey_active: #afb7bf;
+
+$pinet_orange: #ffb24d;
+$pinet_orange_hover: #fca32f;
+$pinet_orange_active: #fc9714;
+
+$pinet_red: #f9845b;
+$pinet_red_hover: #fc622b;
+$pinet_red_active: #f84e12;
+
+$pinet_white: #ffffff;
+$pinet_white_hover: #b9c0c7;
+$pinet_white_active: #afb7bf;
+
+$pinet_delete: #f2f3f5;
+$pinet_delete_hover: #d3dadd;
+$pinet_delete_active: #bfc7cb;
+
+// grid
+$column_length: 12;
+$column_gutter: 30px;
+
+// nav
+$nav_background: #24292e;
+$nav_padding_top: 30px;
+
+$nav_a_color: #ffffff;
+$nav_a_height: 100px;
+$nav_a_padding_left: 18.75%;
+$nav_a_padding_right: 18.75%;
+$nav_a_margin_bottom: 18.75%;
+
+$nav_a_picture_bg: #505458;
+$nav_a_picture_padding_left: 24px;
+$nav_a_picture_padding_right: 24px;
+$nav_a_picture_border_radius: 4px;
+$nav_a_picture_hover_color: #ffffff;
+$nav_a_picture_hover_bg: #1a1f22;
+$nav_a_picture_active_bg: #1a1f22;
+
+$nav_a_divide_bottom: 360px;
+$nav_a_language_bottom: 210px;
+$nav_a_logoout_bottom: 60px;
+
+//button
+$btn_box_shadow_grey: 0 3px 0 #aeb6bb;
+$btn_box_shadow_green: 0 3px 0 #40a866;
+$btn_box_shadow_blue: 0 3px 0 #2e84b5;
+$btn_box_shadow_orange: 0 3px 0 #d09038;
+$btn_box_shadow_cyan: 0 3px 0 #36b79f;
+
+$btn_font_size: 26px;
+$btn_width: 170px;
+$btn_height: 80px;
+$btn_line_height: 80px;
+$btn_border_radius: 4px;
+$btn_img_height: 34px;
+$btn_circle_width: 80px;
+$btn_letter_sapcing: 1px;
+$btn_disabled_bg: #c2c7ca;
+
+$default_btn_selector: pinet-btn;
+$default_btn_functions: colors;
+
+$btn_themes: (
+	// blue, green
+	blue: (
+		colors ($pinet_blue, $pinet_blue_hover, $pinet_blue_active, $btn_box_shadow_blue),
+		variants (#123221, none),
+		// $pinet_blue, $pinet_blue_hover, $pinet_blue_active, $btn_box_shadow_blue
+	),
+	grey: ($pinet_grey, $pinet_grey_hover, $pinet_grey_active, $btn_box_shadow_grey),
+	green: ($pinet_green, $pinet_green_hover, $pinet_green_active, $btn_box_shadow_green),
+	cyan: ($pinet_cyan, $pinet_cyan_hover, $pinet_cyan_active, $btn_box_shadow_cyan),
+	orange: ($pinet_orange, $pinet_orange_hover, $pinet_orange_active, $btn_box_shadow_orange),
+	white: ($pinet_white, $pinet_white_hover, $pinet_white_active),
+	delete: ($pinet_delete, $pinet_delete_hover, $pinet_delete_active)
+);

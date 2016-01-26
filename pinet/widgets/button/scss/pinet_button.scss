@@ -1,0 +1,96 @@
+.btn-circle {
+	border-radius: 50%;
+}
+
+// $btn-box-shadow-grey: 0 3px 0 #aeb6bb;
+// $btn-box-shadow-green: 0 3px 0 #40a866;
+// $btn-box-shadow-blue: 0 res(100px) 0 #2e84b5;
+// $btn-box-shadow-orange: 0 3px 0 #d09038;
+// $btn-box-shadow-cyan: 0 3px 0 #36b79f;
+
+@function has-theme($theme, $name) {
+	@if map-has-key($theme, $name) == true {
+		@return true;
+	}
+	@else {
+		@return false;
+	}
+}
+
+@function get-theme($theme, $name) {
+	$result: null;
+	@if has-theme($theme, $name) {
+		$result: map-get($theme, $name);
+		@return $result;
+	}
+	@else {
+		$result: false;
+		@return $result;
+	}
+}
+
+
+@mixin responsive_pinet_button($args...) {
+	$themes: (
+		blue: (
+			color: $pinet-blue,
+			hover-color: $pinet-blue-hover,
+			active-color: $pinet-blue-active,
+			shadow:  0 res(100px) 0 #2e84b5
+		)
+	);
+
+	$btn-box-shadow-grey: 0 res(7px, 3px) 0 #aeb6bb;
+	$btn-box-shadow-green: 0 res(7px, 3px) 0 #40a866;
+	$btn-box-shadow-blue: 0 res(7px, 3px) 0 #2e84b5;
+	$btn-box-shadow-orange: 0 res(7px, 3px) 0 #d09038;
+	$btn-box-shadow-cyan: 0 res(7px, 3px) 0 #36b79f;
+
+	// echo: has-theme($themes, grey);
+	// echo: has-theme($themes, blue);
+	// echo: get-theme($themes, blue);
+
+	.btn-blue {
+		@include button-common();
+		@include pinet-btn-variant();
+	    	@include button-color($pinet-blue, $pinet-blue-hover, $pinet-blue-active, $btn-box-shadow-blue);
+	}
+
+	.btn-green {
+		@include button-common();
+		@include pinet-btn-variant();
+	  	@include button-color($pinet-green, $pinet-green-hover, $pinet-green-active, $btn-box-shadow-green);
+	}
+
+	.btn-grey {
+		@include button-common();
+		@include pinet-btn-variant();
+	  	@include button-color($pinet-grey, $pinet-grey-hover, $pinet-grey-active, $btn-box-shadow-grey);
+	}
+
+	.btn-orange {
+		@include button-common();
+		@include pinet-btn-variant();
+		@include button-color($pinet-orange, $pinet-orange-hover, $pinet-orange-active, $btn-box-shadow-orange);
+	}
+
+	.btn-cyan {
+		@include button-common();
+		@include pinet-btn-variant();
+		@include button-color($pinet-cyan, $pinet-cyan-hover, $pinet-cyan-active, $btn-box-shadow-cyan);
+	}
+
+	.btn-white {
+		@include button-common();
+		@include pinet-btn-variant();
+		@include button-color($pinet-white, $pinet-white-hover, $pinet-white-active);
+	}
+
+	.btn-delete {
+		@include button-common();
+		@include pinet-btn-variant();
+		@include button-color($pinet-delete, $pinet-delete-hover, $pinet-delete-active);
+	}
+}
+
+

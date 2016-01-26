@@ -1,0 +1,27 @@
+{
+	"author": "Lbc",
+	"date": "Sat Dec 06 18:30:35 2014",
+	"version": "1.0",
+	"name": "pinet.alert",
+	"doc":"[doc]",
+	"js": {
+		"depends": [],
+		"files" : ["pinet_alert","pinet_alert_init"]
+	},
+	"depends": ["jquery", "button"],
+	"scss": {
+		"depends": [
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_alerts",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/_alerts",
+				"version": "3.3.1"
+			}
+		],
+		"files": ["pinet_alert_mixins", "pinet_alert"]
+	}
+}

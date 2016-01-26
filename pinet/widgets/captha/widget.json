@@ -1,0 +1,15 @@
+{
+	"author": "Lbc",
+	"date": "Sat Dec 06 18:30:43 2014",
+	"version": "1.0",
+	"name": "pinet.captha",
+	"doc":"[doc]",
+	"js": {
+		"depends": [],
+		"files" : []
+	},
+	"scss": {
+		"depends": [],
+		"files": []
+	}
+}

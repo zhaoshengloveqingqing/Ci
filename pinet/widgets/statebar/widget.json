@@ -1,0 +1,16 @@
+{
+	"author": "Andy",
+	"date": "Thu Dec 18 11:56:56 2014",
+	"version": "1.0",
+	"name": "pinet.statebar",
+	"doc":"[doc]",
+	"js": {
+		"depends": [],
+		"files" : []
+	},
+	"depends": ["image", "tooltip"],
+	"scss": {
+		"depends": [],
+		"files": ["pinet_statebar"]
+	}
+}

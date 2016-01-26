@@ -1,0 +1,63 @@
+@mixin responsive_pinet_subnavi($args...) {
+
+	ul.pinet-subnavi  {
+		display: block;
+		margin: 0;
+		padding: 0;
+		> li {
+			list-style: none;
+		}
+	}
+
+	ul.pinet-subnavi {
+		width: res(543px, 235px);
+		border:1px solid transparent;
+		font-size: res(26px);
+		text-indent: 29px;
+
+		> li {
+			display: block;
+			> h3 {
+				margin: 0;
+				color: #2c3e50;
+				font-size: res(26px);
+				background: #ffffff;
+				height: res(93px);
+				line-height: res(93px);
+			}
+			a {
+				display: block;
+				background: #fafafa;
+				color: #aab2b9;
+				height: res(93px);
+				line-height: res(93px);
+				&:hover {
+					background: #ffffff;
+					cursor: pointer;
+				}
+			}
+		}
+		&.first {
+			> li {
+				h3 {
+					border-bottom: 1px solid #eaeaea;
+					border-top:1px solid transparent;
+					@include border-top-radius(7px);
+				}
+			}
+		}
+		&.last {
+			> li {
+				border-bottom: 1px solid #eaeaea;
+				&:last-child {
+					border-bottom:1px solid transparent;
+					@include border-bottom-radius(7px);
+					a {
+						border-bottom:1px solid transparent;
+						@include border-bottom-radius(7px);
+					}
+				}
+			}
+		}
+	}
+}

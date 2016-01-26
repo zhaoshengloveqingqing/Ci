@@ -1,0 +1,37 @@
+{
+	"author": "Lbc",
+	"date": "Sun Dec 07 08:55:18 2014",
+	"version": "1.0",
+	"name": "pinet.listview",
+	"doc":"[doc]",
+	"js": {
+		"depends": [
+			{
+				"module": "string",
+				"file": "string",
+				"version": "1.9.0"
+			},
+			{
+				"module": "store",
+				"file": "store",
+				"version": "1.0.0"
+			},		
+			{
+				"module": "jquery-listview",
+				"file": "jquery-listview-layout",
+				"version": "0.0.1"
+			},		
+			{
+				"module": "jquery-listview",
+				"file": "jquery-listview",
+				"version": "0.0.1"
+			}
+		],
+		"files" : []
+	},
+	"depends": ["jquery","datatable"],
+	"scss": {
+		"depends": [],
+		"files": ["pinet_listview"]
+	}
+}

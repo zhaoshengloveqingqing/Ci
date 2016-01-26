@@ -1,0 +1,70 @@
+@mixin responsive_p_admin($width) {
+	$screen_width: $width;
+	@include full_screen();
+	@include table_container();
+	@include picture();
+	.container {
+		@include display_table();
+
+		.scroll {
+			width: 100%;
+			position: relative;
+			left: 0;
+			top: 0;
+			overflow: auto;
+		}
+
+		.full-width {
+			width: 100%;
+		}
+
+		.full-height {
+			height: 100%;
+		}
+
+		#main {
+			width: 100%;
+			height: 100%;
+			padding-left: res(50px);
+			padding-right: res(50px);
+			background-color: #f2f3f5;
+            .scroll {
+                > .row {
+                    margin: 0;
+                    > [class*=col] {
+                        padding: 0;
+                    }
+                }
+            }
+			#header {
+				color: #676e76;
+				font-size: res(36px);
+                padding-top: res(40px);
+                padding-bottom: res(40px);
+				.info {
+					float: right;
+					> .content {
+						color: #676e76;
+                        float: right;
+					}
+				}
+			}
+            #toolbar {
+                .faq {
+                  float: right;
+                  top: 0;
+                  right: 0;
+                  width: res(85px);
+                  height: res(85px);
+                  border:1px solid #8d9aa5;
+                  background-color: #8d9aa5;
+                  border-radius: 50%;
+                  text-align: center;
+                  font-size: res(48px);
+                  line-height: res(85px);
+                  color: #fff;
+                }
+            }
+		}
+	}
+}

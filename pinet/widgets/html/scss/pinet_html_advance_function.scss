@@ -1,0 +1,292 @@
+@function _std-autocheck($value...) {
+	$params: $value;
+	$result: null;
+	// @return  go in;
+	// @return func_num_args($value...);
+	// @return length($params);
+	// @return type-of(nth($params, 2));
+	@if length($params) == 2 {
+		// @return  go in;
+		@if type-of(nth($params, 2)) == map {
+			$resolutions: nth($params, 2);
+			$reslen: length($resolutions);
+			$listres: to-list($resolutions);
+			// @return  go in;
+			@if $reslen == 1{
+				// @return  go in;
+				$second: nth($listres, 1);
+				$res: trans-to-width(nth($second,1));
+
+				// ($res: #value)
+				@if $res != false {
+					@if strip-units($screen-width) > ($res - 1) and strip-units($screen-width) < 2881 {
+						$result: true, nth($second, 2), $res;
+						@return $result;
+					}
+					@else {
+						$result: false, nth($params, 1);
+						@return $result;
+					}
+				}
+				@else {
+					$result: false, nth($params, 1);
+					@return $result;
+				}
+
+			}
+			@else if $reslen == 2 {
+				$second: nth($listres, 1);
+				$thids: nth($listres, 2);
+				$sres: trans-to-width(nth($second,1));
+				$tres: trans-to-width(nth($thids,1));
+
+				// ($res: #value, $tres: #value)
+				// @return length($sres);
+				// @return $sres;
+				// @return type-of($sres);
+				// @return length($tres);
+				// @return $tres;
+				// @return type-of($tres);
+
+				// ?(is return value can be false)
+				@if $sres == false and  $tres == false {
+					$result: false, nth($params, 1);
+					@return $result;
+				}
+				@else if $sres != false and $tres == false {
+					$sres: to-number($sres);
+					@if strip-units($screen-width) > ($sres - 1) and strip-units($screen-width) < 2881 {
+						$result: true, nth($second, 2), $sres;
+						@return $result;
+					}
+					@else {
+						$result: false, nth($params, 1);
+						@return $result;
+					}
+				}
+				@else if $sres == false and $tres != false {
+					$tres: to-number($tres);
+					@if strip-units($screen-width) > ($tres - 1) and strip-units($screen-width) < 2881 {
+						$result: true, nth($thids, 2), $tres;
+						@return $result;
+					}
+					@else {
+						$result: false, nth($params, 1);
+						@return $result;
+					}
+				}
+				@else {
+					// $res and $tres is number
+					// @return  go in;
+					@if strip-units($screen-width) > ($sres - 1) and strip-units($screen-width) < $tres {
+						$result: true, nth($second, 2), $sres;
+						@return $result;
+					}
+					@if strip-units($screen-width) > ($tres - 1) and strip-units($screen-width) < 2881 {
+						$result: true, nth($thids, 2), $tres;
+						@return $result;
+					}
+					@else {
+						$result: false, nth($params, 1);
+						@return $result;
+					}
+				}
+
+			}
+		}
+		@else {
+			$result: false, nth($params, 1);
+			@return $result;
+		}
+	}
+	$result: false, $params;
+	@return $result;
+}
+
+@function _std-autos($args...)  {
+	$result: null;
+	$argslength: func_num_args($args...);
+
+	@if $argslength == 1 {
+		$result: func_get_args($args...);
+		@return $result;
+	}
+	@else if $argslength > 1 {
+		$params: func_get_args($args...);
+		@if $argslength == 2 {
+			$lastarg: func_get_arg(2, $args...);
+			@if type-of($lastarg) == string {
+				$callback: $lastarg;
+				$result: _std-autocheck(nth($params, 1));
+			}
+			@else {
+				$callback: -1;
+				$result: _std-autocheck($args...);
+			}
+		}
+		@else if $argslength  == 3 {
+			// @return  go in;
+			// @return map-keys(nth($args, 2));
+			$lastarg: func_get_arg(3, $args...);
+			@if type-of($lastarg) == string {
+				$callback: $lastarg;
+				$thparams: func_remove_arg(3, $args...);
+			}
+			@else {
+				$callback: -1;
+				$thparams: $args;
+			}
+			// $thparams: func_get_args($args...);
+			// @return length($thparams);
+			// @return $thparams;
+			// @return type-of($thparams);
+			$result: _std-autocheck($thparams...);
+			// @return the result is $result;
+		}
+		// Handle callback (type: bool, value)
+		@if nth($result, 1) == false {
+			$result: nth(nth($result, 2), 1);  //fix nth bug ?(libsass 3.1)
+			@if $callback != -1 {
+				//Todo args num
+				$result: call($callback, $result);
+			}
+		}
+		@else {
+			// @return  go in;
+			$num: nth(nth($result, 2), 1); //fix nth bug ?(libsass 3.1)
+			$minwidth: nth(nth($result, 3), 1); //fix nth bug ?(libsass 3.1)
+			// @return length($minwidth);
+			// @return $minwidth;
+			// @return type-of($minwidth);
+			// @return length($callback);
+			// @return $callback;
+			// @return type-of($callback);
+			@if $callback != -1 {
+				//Todo args num
+				$result: call($callback, $num, $minwidth);
+			}
+		}
+		@return $result;
+	}
+}
+
+@function is_like_percentage($number) {
+	$allowed: '%';
+	$strnumber: unquote($number+'');
+	@if type-of($number) == number {
+		@if str-index($strnumber, $allowed) != null {
+			@return true;
+		}
+		@else {
+			@return false;
+		}
+	}
+	@else {
+		@return false;
+	}
+}
+
+@function mincal($args...) {
+	$result: null;
+	$argslength: func_num_args($args...);
+	@if $argslength < 2 {
+		$firstarg: func_get_arg(1, $args...);
+		// @return length($firstarg);
+		// @return $firstarg;
+		// @return type-of($firstarg);
+		@if is_like_percentage($firstarg) {
+			$result: $firstarg;
+			@return $result;
+		}
+		@else {
+			$result: $firstarg * ($screen-width / strip-units($min-screen-width));
+			@return $result;
+		}
+	}
+	@else if $argslength == 2 {
+		$firstarg: func_get_arg(1, $args...);
+		$secondarg: func_get_arg(2, $args...);
+		@if is_like_percentage($firstarg) {
+			$result: $firstarg;
+			@return $result;
+		}
+		@else {
+			$result: $firstarg * ($screen-width / strip-units($secondarg));
+			@return $result;
+		}
+	}
+	@else {
+		@return 0;
+	}
+}
+
+@function minvar($args...) {
+	$result: null;
+	$argslength: func_num_args($args...);
+
+	$max: false;
+	@if $argslength == 1 {
+		$result: call(mincal, $args...);
+		@return $result;
+	}
+	@else {
+		$second-arg: func_get_arg(2, $args...);
+		// @return length($second-arg);
+		// @return $second-arg;
+		// @return type-of($second-arg);
+		// @return length($params);
+		// @return $params;
+		// @return type-of($params);
+		// @return nth($params, 1);
+		// @return type-of(nth($params, 1));
+		// @return nth($params, 2);
+		// @return type-of(nth($params, 2));
+		// @return go in;
+		@if type-of($second-arg) == number {
+			// @return go in;
+			// $params: func_remove_arg(2, $args...);
+			$max: true;
+			$params: func_replace_arg(2, mincal, $args...);
+			// @return length($params);
+			// @return $params;
+			// @return type-of($params);
+			// @return length(nth($params, 1));
+			// @return nth($params, 1);
+			// @return type-of(nth($params, 1));
+			// @return length(nth($params, 2));
+			// @return nth($params, 2);
+			// @return type-of(nth($params, 2));
+		}
+		@else {
+			$params: func_set_arg(mincal, $args...);
+			// @return length($params);
+			// @return $params;
+			// @return type-of($params);
+			// @return length(nth($params, 1));
+			// @return nth($params, 1);
+			// @return type-of(nth($params, 1));
+			// @return length(nth($params, 2));
+			// @return nth($params, 2);
+			// @return type-of(nth($params, 2));
+		}
+		// @return length($params);
+		// @return $params;
+		// @return type-of($params);
+		$result: _std-autos($params...);
+
+		// Handle max value ?(is that right)
+		@if $max == true {
+			@if $result > $second-arg {
+				$result: $second-arg;
+			}
+		}
+
+		// @return length($params);
+		// @return $params;
+		// @return type-of($params);
+		@return $result;
+	}
+
+	@return false;
+}
+

@@ -1,0 +1,27 @@
+{
+	"author": "Andy",
+	"date": "Thu Dec 18 10:20:06 2014",
+	"version": "1.0",
+	"name": "pinet.tooltip",
+	"doc":"[doc]",
+	"js": {
+		"depends": [],
+		"files" : ["pinet_tooltip", "pinet_tooltip_init"]
+	},
+	"depends": ["jquery"],
+	"scss": {
+		"depends": [
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_opacity",
+				"version": "3.3.1"
+			},		
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/_tooltip",
+				"version": "3.3.1"
+			}
+		],
+		"files": []
+	}
+}

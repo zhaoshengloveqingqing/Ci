@@ -1,0 +1,16 @@
+{
+	"author": "Lbc",
+	"date": "Sat Dec 06 22:09:19 2014",
+	"version": "1.0",
+	"name": "pinet.action",
+	"doc":"[doc]",
+	"js": {
+		"depends": [],
+		"files" : []
+	},
+	"depends": ["jquery", "image"],
+	"scss": {
+		"depends": [],
+		"files": []
+	}
+}

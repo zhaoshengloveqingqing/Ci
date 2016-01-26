@@ -1,0 +1,28 @@
+@mixin responsive_p_layout($width) {
+	$screen_width: $width;
+	* {
+		color: #fff;
+		background: #333;
+	}
+	body {
+		background-color: #345;
+	}
+	.container {
+		width: res(2560px);
+		height: 1920px;
+		.banner {
+			text-align: center;
+		}
+		#header {
+			background-color: rgba(255, 255, 255, 0.5);
+			height: res(80px);
+			line-height: res(80px);
+		}
+		#header .row div{
+			background-color: #ddd;
+		}
+		#main .row div{
+			background-color: #934;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+@mixin init_test() {
+	h1 {
+		color: red;
+	}
+}
+
+@mixin responsive_test($width) {
+	$screen_width: $width;
+	h1 {
+		font-size: $width / 1920 * 100;
+	}
+	.test {
+		width: res(600px);
+	}
+}

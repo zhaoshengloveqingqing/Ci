@@ -1,0 +1,16 @@
+{
+	"author": "Andy",
+	"date": "Wed Dec 17 15:08:59 2014",
+	"version": "1.0",
+	"name": "pinet.tablelayout",
+	"doc":"[doc]",
+	"js": {
+		"depends": [],
+		"files" : []
+	},
+	"depends": ["grid","navigation","statebar","toolbar","alert"],
+	"scss": {
+		"depends": [],
+		"files": ["pinet_tablelayout"]
+	}
+}

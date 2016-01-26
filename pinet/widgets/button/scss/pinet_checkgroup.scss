@@ -1,0 +1,35 @@
+.btn-group-default {
+	.btn {
+		@include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+	}
+}
+
+.btn-group-primary {
+	.btn {
+		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	}
+}
+
+.btn-group-success {
+	.btn {
+		@include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+	}
+}
+
+.btn-group-info {
+	.btn {
+		@include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+	}
+}
+
+.btn-group-warning {
+	.btn {
+		@include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+	}
+}
+
+.btn-group-danger {
+	.btn {
+		@include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+	}
+}

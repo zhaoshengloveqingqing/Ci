@@ -1,0 +1,48 @@
+@mixin switch-box-variant() {
+	border-width: 2px;
+	border-style: solid;
+	font-size: res(26px);
+	border-radius: 7px;
+	.btn {
+		color: #6f767e;
+		background-color: #ffffff;	
+		&:active, &.active {
+			@include box-shadow(none);			
+		}	
+	}
+}
+
+@mixin switch-box-color($color, $hover-color, $border-color:$color, $text-color:#ffffff) {
+	border-color:$border-color;
+	.btn {
+		border: 0;
+		&:not(.active) {
+			&:hover {
+				background-color: $hover-color;			
+			}
+		}
+		&.active {
+			color: $text-color;
+			background-color: $color;
+		}
+	}
+}
+
+.switch-box.btn-group-green {
+	@include switch-box-variant();
+	@include switch-box-color($pinet-green, #dbfbe6, $border-color:#55d684);
+}
+
+.switch-box.btn-group-cyan {
+	@include switch-box-variant();
+	@include switch-box-color($pinet-cyan, #dbfbe6, $border-color:#1dd2af);
+}
+
+.switch-box.btn-group-blue {
+	@include switch-box-variant();
+	@include switch-box-color($pinet-blue, #bee7f9, $border-color:#1d99d2);
+}
+.switch-box.switch-box-green{
+	@include switch-box-variant();
+	@include switch-box-color($pinet-green, #dbfbe6, $border-color:#55d684);
+}

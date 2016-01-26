@@ -1,0 +1,72 @@
+{
+	"author": "Lbc",
+	"date": "Sat Dec 06 18:24:34 2014",
+	"version": "1.0",
+	"name": "pinet.html",
+	"doc":"[doc]",
+	"js": {
+		"depends": [],
+		"files" : []
+	},
+	"depends": ["link"],
+	"scss": {
+		"depends": [
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/_normalize",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_vendor-prefixes",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_tab-focus",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_opacity",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_reset-filter",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_border-radius",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_clearfix",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_text-emphasis",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_text-overflow",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_background-variant",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/_type",
+				"version": "3.3.1"
+			}
+		],
+		"files": ["pinet_html_function","pinet_html_advance_function","pinet_html_maxvar_function","pinet_html_maxauto_function","pinet_html"]
+	}
+}

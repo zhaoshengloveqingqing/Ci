@@ -1,0 +1,52 @@
+@mixin responsive_pinet_toolbar($args...) {
+	.pinet-toolbar {
+		margin: 0;
+		margin-bottom: res(35px);
+		> .form-group {
+			margin: 0;
+			display: inline-block;
+		}
+		> .control-group {
+			vertical-align: top;
+		}
+		> .control-group.search {
+			width: res(580px);
+			height: res(84px, 35px);
+			float: left;
+			margin-right: res(20px);
+			> input {
+				height: 100%;
+			}
+		}
+		> .btn {
+			width: res(200px);
+			height: res(80px);
+			padding: 0;
+			line-height: res(80px);
+			text-shadow: none;
+			font-size: res(26px);
+			margin-left: 0;
+		}
+		> .faq {
+			float: right;
+			position: relative;
+			top: 0;
+			right: 0;
+			width: res(85px, 32px);
+			height: res(85px, 32px);
+			background-color: #8d9aa5;
+			border-radius: 50%;
+			text-align: center;
+			font-size: res(48px, 14px);
+			line-height: res(85px, 32px);
+			color: #fff;
+		}
+		.tooltip {
+			word-wrap: break-word;
+			overflow-wrap: break-word;
+			.tooltip-inner {
+				text-align: left;
+			}
+		}
+	}
+}

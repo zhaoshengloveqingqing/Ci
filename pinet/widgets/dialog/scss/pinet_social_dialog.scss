@@ -1,0 +1,41 @@
+@mixin responsive_pinet_social_dialog($args...) {
+	.social-dialog {
+		max-width: res(450px);
+		.dialog-body {
+			text-align: center;
+			height: res(340px);	
+			padding-top: res(70px);
+			picture {
+				display: inline-block;
+				width: res(140px);
+			}
+		}
+		.dialog-footer {
+			text-align: center;
+			.switch-box {
+				border: 0;
+				.btn {
+					line-height: res(70px);
+				}
+				.btn:not(.active) {
+					background-color: #eeeff4;
+					color: #a2a6ad;
+				}			
+			}
+		}
+	}
+
+	.social-dialog-green {
+		.dialog-body {
+			color: #ffffff;
+			background-color: #51b46d;
+		}
+	}
+
+	.social-dialog-orange {
+		.dialog-body {
+			color: #ffffff;
+			background-color: #f9845d;
+		}		
+	}
+}

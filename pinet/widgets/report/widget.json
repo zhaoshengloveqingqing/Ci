@@ -1,0 +1,22 @@
+{
+	"author": "Lbc",
+	"date": "Sat Dec 06 18:31:04 2014",
+	"version": "1.0",
+	"name": "pinet.report",
+	"doc":"[doc]",
+	"js": {
+		"depends": [
+			{
+				"module": "highcharts",
+				"file": "highcharts",
+				"version": "4.0.3"
+			}
+		],
+		"files" : []
+	},
+	"depends": ["jquery"],
+	"scss": {
+		"depends": [],
+		"files": []
+	}
+}

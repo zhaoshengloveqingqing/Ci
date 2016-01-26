@@ -1,0 +1,36 @@
+{
+	"author": "Andy",
+	"date": "Tue Dec 02 14:36:28 2014",
+	"version": "1.0",
+	"name": "pinet.grid",
+	"doc":"[doc]",
+	"js": {
+		"depends": [],
+		"files" : []
+	},
+	"scss": {
+		"depends": [
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/_normalize",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_clearfix",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_grid-framework.scss",
+				"version": "3.3.1"
+			},
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/mixins/_grid.scss",
+				"version": "3.3.1"
+			}
+		],
+		"files": ["pinet_grid_mixin","pinet_grid"]
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"author": "Andy",
+	"date": "Thu Dec 18 12:59:09 2014",
+	"version": "1.0",
+	"name": "pinet.toolbar",
+	"doc":"[doc]",
+	"js": {
+		"depends": [],
+		"files" : ["pinet_toolbar_init"]
+	},
+	"depends": ["button", "tooltip", "form", "state"],
+	"scss": {
+		"depends": [],
+		"files": ["pinet_toolbar"]
+	}
+}

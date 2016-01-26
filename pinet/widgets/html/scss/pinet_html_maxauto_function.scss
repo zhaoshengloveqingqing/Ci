@@ -1,0 +1,60 @@
+@function _std-list-map($callback, $list) {
+	$result: ();
+	@each $i in $list {
+		$result: join($result, call($callback, $i) ,comma);
+	}
+	@return $result;
+}
+
+
+@function pinet-resolution-filter($num) {
+	$params: $pinet-no-alias-resolutions;
+	$result: ();
+	@each $i in $params {
+		@if $i < $num {
+			$result: join($result, $i ,comma);
+		}
+	}
+	@return $result;
+}
+
+
+@function pinet-resolution-sfs($num) {
+	$params: $pinet-no-alias-resolutions;
+	$result: ();
+	@each $i in $params {
+		@if $i >= $num {
+			$result: join($result, $i ,comma);
+		}
+	}
+	@return $result;
+}
+
+
+@function maxauto($args...) {
+	$argslength: func_num_args($args...);
+	@if $argslength == 2 {
+		$num: func_get_arg(1, $args...);
+		$value: func_get_arg(2, $args...);
+		$params: pinet-resolution-filter($num);
+		@if index($params, $screen-width) != null {
+			@return $value;
+		}
+	}
+	@else {
+		$num: func_get_arg(1, $args...);
+		$value: func_get_arg(2, $args...);
+		$arrayres: func_get_arg(3, $args...);
+		$arrayres: map-merge( ($num: $value), $arrayres);
+		$res: map-keys($arrayres);
+		$values: map-values($arrayres);
+		@for $i from 1 through 2 {
+			@if $screen-width < nth($res, $i) {
+				// @return wo shi sa bi, wo bei nth($res, $i) sha le;
+				@return maxauto(nth($res, $i), nth($values, $i));
+			}
+		}
+		@return;
+	}
+	@return;
+}

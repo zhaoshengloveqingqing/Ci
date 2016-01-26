@@ -1,0 +1,23 @@
+{
+	"author": "Lbc",
+	"date": "Sun Dec 07 08:34:09 2014",
+	"version": "1.0",
+	"name": "pinet.jquery",
+	"doc":"[doc]",
+	"js": {
+		"depends": [
+			{
+				"module": "jquery",
+				"file": "jquery.min",
+				"version": "2.1.3",
+				"index": 0,
+				"position": "foot"
+			}
+		],
+		"files" : []
+	},
+	"scss": {
+		"depends": [],
+		"files": []
+	}
+}

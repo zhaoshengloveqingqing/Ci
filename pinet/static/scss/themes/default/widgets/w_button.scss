@@ -1,0 +1,41 @@
+@mixin responsive_w_button($width) {
+
+	@each $theme, $value in $btn_themes{
+		$variants: null;
+		$colors: null;
+
+		.btn.#{$default_btn_selector}-#{$theme} {
+			@if type-of(nth($value, 1)) == color {
+				@if $default_btn_functions == colors {
+					$colors: $value;
+				}
+			}
+
+			@if type-of(nth($value, 1)) == string {
+				@if nth($value, 1) == colors {
+					@if length($value) == 2 {
+						$colors: ();
+						@each $arg in nth($value, 2) {
+							$colors: append($colors, $arg);
+						}
+					}
+				}
+			}
+
+			@if type-of(nth($value, 1)) == list {
+				@each $arg in $value {
+					@if nth($arg, 1) == variants {
+						$variants: remove-nth($arg, 1);
+					}
+					@if nth($arg, 1) == colors {
+						$colors: remove-nth($arg, 1);
+					}
+				}
+			}
+
+		 	@include button_variant($variants...);
+			@include button_color($colors...);
+		}
+
+	}
+}

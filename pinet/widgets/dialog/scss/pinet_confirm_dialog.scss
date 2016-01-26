@@ -1,0 +1,31 @@
+@mixin responsive_pinet_confirm_dialog($args...) {
+	.confirm-dialog {
+		.dialog-footer {
+			.switch-box {
+				float: right;
+				border: 0;
+				.btn {
+					line-height: res(70px);
+				}
+				.btn:not(.active) {
+					background-color: #eeeff4;
+					color: #a2a6ad;
+				}			
+			}
+		}
+	}
+
+	.confirm-dialog-green {
+		.dialog-body {
+			color: #ffffff;
+			background-color: #51b46d;
+		}
+	}
+
+	.confirm-dialog-orange {
+		.dialog-body {
+			color: #ffffff;
+			background-color: #f9845d;
+		}		
+	}
+}

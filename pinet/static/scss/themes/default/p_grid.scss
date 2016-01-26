@@ -1,0 +1,32 @@
+@mixin responsive_p_grid($width) {
+	$grid-col-rs: strip-units($width);  //need bourbon support
+
+	@for $i from 1 through $column_length {
+		$grid-col-width: percentage(($i / $column_length));
+
+		.col-#{$grid-col-rs}-#{$i} {
+			float: left;
+  			min-height: 1px;
+			width: $grid-col-width;
+			padding-left: ($column_gutter / 2);
+    		padding-right: ($column_gutter / 2);
+    		position: relative;
+		}
+
+		.col-#{$grid-col-rs}-offset-#{$i} {
+			margin-left: $grid-col-width;
+		}
+
+		.col-#{$grid-col-rs}-push-#{$i} {
+			left: $grid-col-width;
+		}
+
+		.col-#{$grid-col-rs}-pull-#{$i} {
+			right: $grid-col-width;
+		}
+
+		.col-#{$grid-col-rs}-#{$i}.col-center {
+			left: (100% - $grid-col-width) / 2;
+		}
+	}
+}

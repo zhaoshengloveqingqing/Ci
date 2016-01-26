@@ -1,0 +1,56 @@
+;===============================================================================
+;
+; Core Rules for PHP Clips
+; 
+; The core rules(about loading and others) for PHP clips, will load inside
+; the CLIPS environment. Won't affect others
+;
+; @version 1.0
+; @author Jack <guitarpoet@gmail.com>
+; @date Thu Dec 25 12:40:29 2014
+;
+;===============================================================================
+
+;===============================================================================
+;
+; Core Rules for loading
+;
+;===============================================================================
+
+(defrule if-the-load-begin-with-ci-load-using-ci
+	?l <- (load_arg ?file)
+	(test (str-index "ci://" ?file))
+	=>
+	(retract ?l)
+	(assert (ci_load_arg ?file))
+)
+
+(defrule if-use-ci-to-load-the-commands
+	?arg <- (ci_load_arg ?file)
+	=>
+	(retract ?arg)
+	(assert (command (file-contents ?file)))
+)
+
+(defrule if-file-exists-then-load-it
+	?a <- (load_arg ?file)
+	(test (file-exists ?file))
+	=>
+	(assert (command (file-contents ?file)))
+	(retract ?a)
+)
+
+(defrule if-the-load-begin-with-http-load-using-http
+	?l <- (load_arg ?file)
+	(test (str-index "http://" ?file))
+	=>
+	(retract ?l)
+	(assert (http_load_arg ?file))
+)
+
+(defrule load-commands-using-http
+	?a <- (http_load_arg ?commands)
+	=>
+	(assert (command (file-contents ?commands)))
+	(retract ?a)
+)

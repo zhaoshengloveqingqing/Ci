@@ -1,0 +1,58 @@
+@mixin responsive_w_nav($width) {
+	$screen_width: $width;
+	nav {
+		display: block;
+		width: res(160px);
+		height: 1900px;
+		position: relative;
+		background: $nav_background;
+		border: 0;
+		padding: 0;
+		margin: 0;
+		padding-top: res($nav_padding_top);
+		> a {
+			position: relative;
+			width: 100%;
+			color: $nav_a_color;
+			display: block;
+			padding-left: $nav_a_padding_left;
+			padding-right: $nav_a_padding_right;
+			margin-bottom: $nav_a_margin_bottom;
+			height: res($nav_a_height);
+			text-align: center;
+			line-height: res($nav_a_height);
+			&:hover {
+				text-decoration: none;
+			}
+			> picture {
+				padding-left: res($nav_a_picture_padding_left);
+				padding-right: res($nav_a_picture_padding_right);
+				border-radius: $nav_a_picture_border_radius;
+				&:hover {
+					color: $nav_a_picture_hover_color;
+					background-color: $nav_a_picture_hover_bg;
+				}
+				&.active{
+					background-color: $nav_a_picture_active_bg;
+				}
+			}
+			&.divide {
+				height: res(30px);
+				line-height: res(30px);
+				position: absolute;
+				bottom: res($nav_a_divide_bottom);
+				&:hover {
+					background: none;
+				}
+			}
+			&.language{
+				position: absolute;
+				bottom: res($nav_a_language_bottom);
+			}
+			&.logoout{
+				position: absolute;
+				bottom: res($nav_a_logoout_bottom);
+			}
+		}
+	}
+}

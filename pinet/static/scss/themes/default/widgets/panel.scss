@@ -1,0 +1,5 @@
+@mixin responsive_panel($width) {
+	.panel {
+		width: $width / $screen_max_width * $p_panel_width;
+	}
+}

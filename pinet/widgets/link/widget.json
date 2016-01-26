@@ -1,0 +1,16 @@
+{
+	"author": "Lbc",
+	"date": "Sat Dec 06 18:23:29 2014",
+	"version": "1.0",
+	"name": "pinet.link",
+	"doc":"[doc]",
+	"js": {
+		"depends": [],
+		"files" : []
+	},
+	"depends": [],
+	"scss": {
+		"depends": [],
+		"files": []
+	}
+}

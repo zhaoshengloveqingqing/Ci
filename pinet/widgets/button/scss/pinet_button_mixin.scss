@@ -1,0 +1,87 @@
+@mixin mixin-border-color($border, $border-hover, $border-active) {
+	border-color: $border;
+	&:hover {
+		border-color: $border-hover;
+	}
+	&:active {
+		border-color: $border-hover;
+	}
+}
+
+@mixin mixin-background-color($background, $background-hover, $background-active) {
+	background-color: $background;
+	&:hover {
+		background-color: $background-hover;
+	}
+	&:active {
+		background-color: $background-hover;
+	}
+}
+
+@mixin pinet-btn-variant($text-shadow: 0 2px rgba(0,0,0,0.25)) {
+	font-size: res(26px, (320: 14px, 1280: 16px));
+	width: res(155px);
+	height: res(80px);
+	border-radius: 4px;
+	min-width: 71px;
+	min-height: 30px;
+	letter-spacing: 1px;
+	padding: 0;
+	text-shadow: $text-shadow;
+	vertical-align: top;
+	& > picture {
+		display: block;
+		width: 100%;
+	}
+	& > img, & > picture >img {
+		height: res(34px);
+		position: relative;
+		top: -2px;
+		&.disabled {
+		}
+	}
+	&.btn-circle {
+		width: res(80px);
+	}
+}
+
+@mixin pinet-btn-size($width,$height) {
+	width: $width;
+	height: $height;	
+}
+
+@mixin button-color($color, $hover-color, $active-color, $box-shadow:none) {
+	@include mixin-border-color($color, $hover-color, $active-color);
+	@include mixin-background-color($color, $hover-color, $active-color);
+	@include box-shadow($box-shadow);
+	color: #ffffff;
+	&:hover,
+	&:focus,
+	&:active,
+	&.active,
+	.open > .dropdown-toggle & {
+		color:#ffffff;
+		background-color: $hover-color;
+		border-color: $hover-color;
+	}
+	&:active,
+	&.active,
+	.open > .dropdown-toggle & {
+		background-image: none;
+		background-color: $active-color;
+		border-color: $active-color;
+		@include box-shadow($box-shadow);
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&,
+		&:hover,
+		&:focus,
+		&:active,
+		&.active {
+			background-color: #c2c7ca;
+			border-color: #c2c7ca;
+		}
+	}
+}

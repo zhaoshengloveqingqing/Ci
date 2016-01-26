@@ -1,0 +1,44 @@
+@function strip-units($val) {
+	@return ($val / ($val * 0 + 1));
+}
+
+@mixin pinet_resolutions_visible() {
+	@each $resolution in $pinet-resolutions {
+		@if type-of($resolution) == map {
+			$max_width: map-values($resolution)+px;
+			$grid_sel: map-keys($resolution), map-values($resolution);
+		} @else {
+			$max_width: $resolution+px;
+			$grid_sel: $resolution;
+		}
+
+		@each $sel in $grid_sel {
+			.visible-#{$sel}-block,
+			.visible-#{$sel}-inline,
+			.visible-#{$sel}-inline-block{
+				display: none !important;
+			}
+		}
+
+	}
+}
+
+@mixin pinet_responsive_hidden() {
+	@each $resolution in $pinet-resolutions {
+		@if type-of($resolution) == map {
+			$max_width: map-values($resolution)+px;
+			$grid_sel: map-keys($resolution), map-values($resolution);
+		} @else {
+			$max_width: $resolution+px;
+			$grid_sel: $resolution;
+		}
+
+		@media (max-width: $max_width) {
+			@each $sel in $grid_sel {
+				.hidden-#{$sel} {
+					display: none !important;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"author": "Jack <jack.fu@pinet.co>",
+	"date": "Wed Nov 26 17:36:03 2014",
+	"version": "1.0",
+	"name": "pinet.revive_banner",
+	"doc":"The revive banner widget for ads",
+	"depends": ["banner"]
+}

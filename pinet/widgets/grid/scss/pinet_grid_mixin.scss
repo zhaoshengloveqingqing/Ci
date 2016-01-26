@@ -1,0 +1,108 @@
+@mixin full_screen() {
+	html, body {
+		height: 100%;
+		overflow-x: hidden;
+		overflow-y: hidden;
+	}
+}
+
+@mixin container_fluid() {
+	& {
+		width: 100%;
+		padding: 0;
+		.row {
+			margin: 0;
+			& > [class^=col] {
+				padding: 0;
+			}
+		}
+	}
+}
+
+@mixin container_full_screen() {
+	height: 100%;
+	& > .row {
+		height: 100%;
+		& > [class^=col] {
+			height: 100%;
+		}
+	}
+}
+
+@mixin fix_display_inline_block() {
+	font-size:0;
+	*font-size:0;
+	*letter-spacing:normal;
+	*word-spacing:-1px;
+}
+
+@mixin display_table() {
+	width: 100%;
+	height: 100%;
+	display: table;
+	//Compatible bootstrap
+	padding: 0 ;
+	margin: 0;
+	&:before, &:after {
+		content: none;
+	}
+	//
+	border-collapse: separate;
+	border-spacing: 0px;
+	> .row {
+		display: table-row;
+		&:before, &:after {
+			content: none;
+		}
+		> .col {
+			display: table-cell;
+			vertical-align: top;
+			> .scroll {
+				height: 100%;
+				overflow-x: hidden;
+				overflow-y: auto;
+			}
+		}
+	}
+
+	.col > .scroll {
+	  width: 100%;
+	  position: relative;
+	  left: 0;
+	  top: 0;
+	  overflow: auto;
+	}
+
+	.full-width {
+	  width: 100%;
+	}
+
+	.full-height {
+	  height: 100%;
+	}
+}
+
+@mixin table_container() {
+	width: 100%;
+	height: 100%;
+	display: table;
+	//Compatible bootstrap
+	padding: 0;
+	margin: 0;
+	&:before, &:after {
+		content: none;
+	}
+	//
+	border-collapse: separate;
+	border-spacing: 0px;
+	> .table-row {
+		display: table-row;
+		&:before, &:after {
+			content: none;
+		}
+		> .table-col {
+			display: table-cell;
+			vertical-align: top;
+		}
+	}
+}

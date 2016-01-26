@@ -1,0 +1,18 @@
+{
+	"author": "Jack <jack.fu@pinet.co>",
+	"date": "Wed Nov 26 15:18:09 2014",
+	"version": "1.0",
+	"name": "pinet.banner",
+	"doc":"The banner widget for ads",
+	"js": {
+		"depends": [],
+		"files" : [
+			"banner"
+		]
+	},
+	"depends": ["jquery"],
+	"scss": {
+		"depends": [],
+		"files": ["pinet_banner"]
+	}
+}

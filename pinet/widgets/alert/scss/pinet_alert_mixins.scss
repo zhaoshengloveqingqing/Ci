@@ -1,0 +1,52 @@
+@mixin pinet-alert-variant($width) {
+	display: inline-block;
+	width: 100%;
+	padding-top: 0;
+	padding-bottom: 0;
+ 	height: res(116px);
+ 	font-size: res(36px);
+ 	.info {
+		float: left;
+		height: 100%;
+		line-height: res(116px);
+ 	}
+	.menu {
+		float:right;
+		height:100%;
+		padding-right: res(38px);
+		padding-top: res(5px);
+		& > .btn {
+			font-size: 14px;
+			margin-top: res(10px);
+			width: res(193px);
+			height: res(78px);
+			line-height: 0;
+			&:hover {
+				color: #ffffff;
+			}
+ 		}
+		& > .yes {
+			margin-right: res(22px);
+		}
+ 	}
+}
+
+@mixin pinet-alert-color($background, $border, $text-color, $btn-bg, $btn-bg-hover) {
+	background-color: $background;
+	border-color: $border;
+	color: $text-color;
+
+	hr {
+	}
+	.alert-link {
+	}
+
+	.menu {
+		& > .btn {
+			background-color: $btn-bg;
+			&:hover {
+				background-color: $btn-bg-hover;
+			}
+ 		}
+ 	}
+}

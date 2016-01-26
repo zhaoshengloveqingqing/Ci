@@ -1,0 +1,33 @@
+{
+	"author": "Andy",
+	"date": "Wed Dec 10 11:11:21 2014",
+	"version": "1.0",
+	"name": "pinet.responsive",
+	"doc":"[doc]",
+	"js": {
+		"depends": [
+			{
+				"module": "jquery-picture",
+				"file": "jquery-picture",
+				"version": "0.9.0"
+			},
+			{
+				"module": "jquery-mobile",
+				"file": "jquery-mobile",
+				"version": "1.0.0"
+			}
+		],
+		"files" : []
+	},
+	"depends": ["jquery","bootstrap"],
+	"scss": {
+		"depends": [
+			{
+				"module": "bootstrap",
+				"file": "bootstrap/_responsive-embed.scss",
+				"version": "3.3.1"
+			}
+		],
+		"files": ["pinet_responsive_mixins","pinet_responsive"]
+	}
+}

@@ -1,0 +1,53 @@
+@mixin responsive_pinet_tablelayout($args...) {
+	@include full_screen();
+	.container-table {
+		@include display_table();
+		background-color: #f2f3f5;
+		height: 100%;
+		#layout-navigation {
+			.tooltip.in {
+				position: fixed;
+			}
+		}
+		#layout-main {
+			width: 100%;
+			padding-left: res(60px);
+			padding-right: res(60px);
+		}
+		#layout-content {
+			height: 100%;
+		}
+		#layout-workbench {
+			width: 100%;
+			padding-right: res(60px);
+			iframe {
+				border: 0;
+			}
+		}
+		#layout-toolbar {
+			margin-bottom: res(35px);
+		}
+		#layout-scrollcontent {
+			> .table-col {
+				position: relative;
+				// overflow: auto;
+				// height: 100%;
+			}
+			height: 100%;
+		}
+		.scroll-con {
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			position: absolute;
+		}
+	}
+	@-moz-document url-prefix() {
+		#layout-navigation {
+			height: 100%;
+		}
+		#layout-main .scroll {
+			height: 100%;
+		}
+	}
+}

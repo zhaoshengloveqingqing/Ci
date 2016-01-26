@@ -1,0 +1,119 @@
+* {
+	@include box-sizing(border-box);
+}
+*:before,
+*:after {
+	@include box-sizing(border-box);
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+.sr-only-focusable {
+	&:active,
+	&:focus {
+		position: static;
+		width: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		clip: auto;
+	}
+}
+
+@mixin responsive_pinet_form($args...) {
+	@include mixin-pinet-form-select();
+	.form-horizontal {
+		.form-group {
+			margin: 0;
+			div {
+				position: relative;
+				padding: 0;
+			}
+			.help-block {
+				display: inline-block;
+				float: right;
+				z-index: 1000;
+				position: absolute;
+				top: res(-80px);
+				right: res(20px);
+				height: auto;
+				margin: 0;
+				z-index: 1000;
+				background-color: #000;
+				border-radius: 4px;
+				> ul {
+					display: block;
+					position: relative;
+					height: 100%;
+					padding: 10px;
+					list-style: none;
+					margin: 0;
+					color: #ffffff;
+				}
+			}
+
+		.help-block:after {
+			content: "";
+			position: absolute;
+			z-index: 1000;
+			bottom: -8px;
+			left: 50%;
+			margin-left: 0;
+			border-top: 8px solid #000;
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			border-bottom: 0;
+			display: none;
+		}
+
+		&.has-error, &.has-warning {
+			.help-block:after {
+			display: block;
+			}
+		}
+
+		&.has-feedback.has-warning, &.has-feedback.has-error {
+			.help-block {
+			right: 0;
+			}
+		}
+
+		&.has-feedback .form-control-feedback {
+			position: relative;
+			float: right;
+			z-index: 2;
+			display: block;
+			width: 34px;
+			height: 100%;
+			line-height: 300%;
+			text-align: center;
+			top: -100%;
+			right: 0;
+		}
+		}
+		label.control-label {
+			text-align: left;
+			line-height: res(60px);
+			color: #6f767e;
+			font-size: res(22px);
+		}
+		input.form-control {
+			height: res(80px);
+			font-size: res(20px);
+			&.pinet-input-mask {
+				letter-spacing: 5px;
+				font-size: res(20px);
+			}
+		}
+	}
+}
+

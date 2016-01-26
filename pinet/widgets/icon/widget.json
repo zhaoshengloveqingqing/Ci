@@ -1,0 +1,15 @@
+{
+	"author": "Andy [andy.ling@pinet.co]",
+	"date": "Fri Nov 28 17:58:35 2014",
+	"version": "1.0",
+	"name": "icon",
+	"doc":"The icon widget",
+	"js": {
+		"depends": [],
+		"files" : []
+	},
+	"scss": {
+		"depends": [],
+		"files": ["pinet_icon"]
+	}
+}

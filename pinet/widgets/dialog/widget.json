@@ -1,0 +1,16 @@
+{
+	"author": "Lbc",
+	"date": "Sat Dec 27 16:04:15 2014",
+	"version": "1.0",
+	"name": "pinet.dialog",
+	"doc":"[doc]",
+	"js": {
+		"depends": [],
+		"files" : []
+	},
+	"depends": ["jquery","image","icon","button"],
+	"scss": {
+		"depends": [],
+		"files": ["pinet_dialog","pinet_confirm_dialog","pinet_social_dialog"]
+	}
+}

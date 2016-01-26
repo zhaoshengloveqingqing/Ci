@@ -1,0 +1,29 @@
+{
+	"author": "Lbc",
+	"date": "Sat Dec 06 18:30:53 2014",
+	"version": "1.0",
+	"name": "pinet.datatable",
+	"doc":"[doc]",
+	"js": {
+		"depends": [
+			{
+				"module": "jquery.dataTables",
+				"file": "jquery.dataTables",
+				"version": "1.10.1"
+			}
+		],
+		"files" : ["pinet_datatable_init"]
+	},
+	"depends": ["jquery","jquery_ui_common","button","icon"],
+	"css": [
+		{
+			"module": "jquery.dataTables",
+			"file": "jquery.dataTables",
+			"version": "1.10.1"
+		}
+	],
+	"scss": {
+		"depends": [],
+		"files": ["pinet_datatable_mixin","pinet_datatable"]
+	}
+}

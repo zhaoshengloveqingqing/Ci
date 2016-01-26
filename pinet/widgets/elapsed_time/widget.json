@@ -1,0 +1,15 @@
+{
+	"author": "Lbc",
+	"date": "Sun Dec 21 15:58:37 2014",
+	"version": "1.0",
+	"name": "pinet.elapsed_time",
+	"doc":"[doc]",
+	"js": {
+		"depends": [],
+		"files" : []
+	},
+	"scss": {
+		"depends": [],
+		"files": []
+	}
+}

@@ -1,0 +1,53 @@
+;===============================================================================
+;
+; The basic definitions for the clips php
+; 
+; This rule will be load by default when the clips php initialize, and provide
+; the most foundation functions for the clips php
+;
+; @version 1.0
+; @author Jack <guitarpoet@gmail.com>
+; @date Fri Dec 26 11:41:39 2014
+;
+;===============================================================================
+
+;===============================================================================
+;
+; Constants
+;
+;===============================================================================
+
+(defglobal ?*low* = -100) 
+(defglobal ?*lower* = -500) 
+(defglobal ?*lowest* = -1000) 
+(defglobal ?*high* = 100) 
+(defglobal ?*higher* = 500) 
+(defglobal ?*highest* = 1000) 
+
+;===============================================================================
+;
+; Classes
+;
+;===============================================================================
+
+(defclass PHP-OBJECT (is-a USER OBJECT))
+
+;===============================================================================
+;
+; Functions
+;
+;===============================================================================
+
+(deffunction load-rules ($?file) (php_call "clips_load_rules" $?file))
+(deffunction file-exists (?file) (php_call "file_exists" ?file))
+(deffunction file-contents (?file) (php_call "file_get_contents" ?file))
+(deffunction cwd () (php_call "getcwd"))
+(deffunction clips-path (?path) (php_call "clips_path" ?path))
+(deffunction push$ (?list ?item) (insert$ ?list (+ 1 (length$ ?list)) ?item))
+(deffunction unshift$ (?list ?item) (insert$ ?list 1 ?item))
+(deffunction match (?str ?pattern) (php_call "clips_str_match" ?str ?pattern))
+(deffunction php-get (?inst ?field) (php_call "clips_get_property" ?inst ?field))
+(deffunction php-require-once (?file) (php_call "clips_php_require_once" ?file))
+(deffunction php_property (?obj ?property) (php_call "clips_get_property" ?obj ?property))
+(deffunction trim (?str) (php_call "trim" ?str))
+(deffunction dump (?msg) (php_call "var_dump" ?msg))

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit bootstrap="application/tests/bootstrap.php">
+	<testsuites>
+		<testsuite name="TestSuite">
+			<directory>application/tests</directory>
+		</testsuite>
+	</testsuites>
+	<php>
+		<env name="PINET_WEB_ENV" value="testing"/>
+		<const name="PHPUNIT_TEST" value="1" />
+		<const name="PHPUNIT_CHARSET" value="UTF-8" />
+		<server name="REMOTE_ADDR" value="192.168.1.100" />
+		<server name="HTTP_HOST" value="localhost" />
+		<server name="REQUEST_METHOD" value="GET" />
+	</php>
+	<filter>
+		<whitelist>
+			<directory suffix=".php">application/tests/</directory>
+            <exclude>
+				<file suffix=".php">application/tests/api/</file>
+            </exclude>
+        </whitelist>
+		<blacklist>
+			<directory suffix=".php">system</directory>
+		</blacklist>
+	</filter>
+</phpunit>

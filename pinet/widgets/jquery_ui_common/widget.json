@@ -1,0 +1,44 @@
+{
+	"author": "Jack",
+	"date": "Mon Dec 01 17:46:27 2014",
+	"version": "1.0",
+	"name": "pinet.jquery_ui_common",
+	"doc":"The jquery ui common js dependencies.",
+	"depends": ["jquery"],
+	"js": {
+		"depends": [
+			{
+				"module": "jquery-ui",
+				"file": "core",
+				"version": "1.11.1",
+				"index": 1,
+				"position": "foot"
+			},
+			{
+				"module": "jquery-ui",
+				"file": "widget",
+				"version": "1.11.1",
+				"index": 2,
+				"position": "foot"
+			},
+			{
+				"module": "jquery-ui",
+				"file": "mouse",
+				"version": "1.11.1",
+				"index": 3,
+				"position": "foot"
+			},
+			{
+				"module": "jquery-ui",
+				"file": "selectable",
+				"version": "1.11.1",
+				"position": "foot"
+			}
+		],
+		"files" : []
+	},
+	"scss": {
+		"depends": [],
+		"files": []
+	}
+}
